@@ -192,15 +192,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
         case QWERTY:
             if (record->event.pressed) {
-                //set_single_persistent_default_layer(_QWERTY);
-                layer_on(_QWERTY);
+                set_single_persistent_default_layer(_QWERTY);
             }
             return false;
             break;
         case DJMAX:
             if (record->event.pressed) {
-                //set_single_persistent_default_layer(_DJMAX);
-                layer_on(_DJMAX);
+                set_single_persistent_default_layer(_DJMAX);
             }
             return false;
             break;

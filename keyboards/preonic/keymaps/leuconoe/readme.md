@@ -1,5 +1,6 @@
 # Delete unused layouts from the default keymap, qwerty layout for DJMAX, 
 
+magic key is Lshift + Rshift + Lctrl
 
 ```
 Qwerty

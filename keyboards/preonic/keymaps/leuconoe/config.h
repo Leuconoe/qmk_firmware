@@ -17,8 +17,12 @@
 #pragma once
 
 #define FORCE_NKRO
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0
+//https://github.com/samhocevar-forks/qmk-firmware/blob/master/keyboards/westfoxtrot/cyclops/config.h
+#undef IS_COMMAND
+#define IS_COMMAND() (get_mods() == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT) | MOD_BIT(KC_LCTRL)))
+
+//#define BOOTMAGIC_LITE_ROW 0
+//#define BOOTMAGIC_LITE_COLUMN 0
 #define AUDIO_CLICKY
 
 #ifdef RGBLIGHT_ENABLE
