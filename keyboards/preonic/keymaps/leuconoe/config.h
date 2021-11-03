@@ -16,12 +16,28 @@
 
 #pragma once
 
+#define FORCE_NKRO
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
+#define AUDIO_CLICKY
+
+#ifdef RGBLIGHT_ENABLE
+// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md
+// https://github.com/qmk/qmk_firmware/blob/79d5b279931cf98d635181235c0301ba7053f9d5/keyboards/planck/keymaps/rootiest/config.h
+//#    define RGBLIGHT_SLEEP                    // Allows rgb to sleep when the host/keyboard does
+#    define RGBLIGHT_ANIMATIONS               // Enable using rgb animations
+#    define RGBLIGHT_LAYERS                   // Enable indicating layers using layered rgb assignments
+#    define RGBLIGHT_LAYER_BLINK              // Allows rgb layers to be blinked (activate for a set amount of time)
+#    define RGBLIGHT_MAX_LAYERS 32            // Overides the default (8) max number of rgb layers
+#    define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF  // Allows rgb layers to work even when rgb is toggled off
+#endif
+
 #ifdef AUDIO_ENABLE
 #    define STARTUP_SONG SONG(PREONIC_SOUND)
 // #define STARTUP_SONG SONG(NO_SOUND)
 
 #    define DEFAULT_LAYER_SONGS \
-        { SONG(QWERTY_SOUND), SONG(COLEMAK_SOUND), SONG(DVORAK_SOUND) }
+        { SONG(QWERTY_SOUND), SONG(ROCK_A_BYE_BABY), SONG(WORKMAN_SOUND) }
 #endif
 
 #define MUSIC_MASK (keycode != KC_NO)
